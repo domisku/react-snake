@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+body {
+  background: rgb(54, 0, 51);
+  background: linear-gradient(
+    90deg,
+    rgba(54, 0, 51, 1) 0%,
+    rgba(11, 135, 147, 1) 50%
+  );
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#gameboard {
+  background-color: lightgray;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  border: 5px solid black;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gamesquare {
+  width: 30px;
+  height: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.snake {
+  background-color: darkmagenta;
+  box-sizing: border-box;
+  border: 2px solid rgb(23, 128, 123);
+}
+
+.food {
+  background-color: tomato;
+}
+
+.snake.food {
+  background-color: darkmagenta;
+}
+
+#game-over-modal {
+  background-color: lightgray;
+  width: 600px;
+  height: 600px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-size: 30pt;
+  border: 5px solid black;
+}
+
+#game-over-modal button {
+  border: none;
+  background-color: rgb(43, 171, 43);
   color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 50ms ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+#game-over-modal button:hover {
+  transform: translateY(2px);
+  box-shadow: 5px 5px 15px 2px rgba(118, 118, 118, 0.66);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#game-over-modal p:nth-of-type(2) {
+  margin-top: 0;
+}
+
+#score {
+  position: absolute;
+  font-size: 18pt;
+  font-weight: 600;
+  color: white;
+  top: -40px;
+}
+
+#btn-start-game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: rgb(43, 171, 43);
+  color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px 2px rgba(118, 118, 118, 0.66);
 }
