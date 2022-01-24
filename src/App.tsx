@@ -40,7 +40,7 @@ function App() {
     else if (
       direction === 20 &&
       Array.from(Array(20).keys())
-        .map((num) => parseInt("38" + num))
+        .map((num) => 380 + num)
         .includes(snake[snake.length - 1])
     )
       setGameOver(true);
